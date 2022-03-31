@@ -12,7 +12,7 @@
   "scripts": {
     "release": "echo 'Successfully released package!'",
     "prerelease": "yarn version",
-    "postversion": "yarn build && yarn publish ./dist/ --new-version $npm_package_version && git push --follow-tags",
+    "postversion": "yarn build && yarn publish --new-version $npm_package_version && git push --follow-tags",
     "prebuild": "rm -rf ./dist/*",
     "build": "rollup -c"
   },
