@@ -1,0 +1,36 @@
+{
+  "name": "html-webpack-jsdom-prerender-plugin",
+  "version": "1.0.0",
+  "description": "Webpack plugin to prerender JS apps in a JSDOM context",
+  "repository": "https://github.com/associatedpress/html-webpack-jsdom-prerender-plugin",
+  "author": "Andrew Milligan",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "release": "echo 'Successfully released package!'",
+    "prerelease": "yarn version",
+    "postversion": "yarn build && yarn publish ./dist/ --new-version $npm_package_version && git push --follow-tags",
+    "prebuild": "rm -rf ./dist/*",
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "jsdom": "^19.0.0",
+    "schema-utils": "^4.0.0"
+  },
+  "peerDependencies": {
+    "html-webpack-plugin": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^21.0.3",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "rollup": "^2.70.1",
+    "rollup-plugin-auto-external": "^2.0.0"
+  }
+}
