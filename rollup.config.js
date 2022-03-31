@@ -4,7 +4,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import autoExternal from 'rollup-plugin-auto-external'
 
 export default {
-  input: './index.js',
+  input: './src/index.js',
   output: [
     {
       dir: 'dist/',
