@@ -52,7 +52,7 @@ class HtmlWebpackJsdomPrerenderPlugin {
     let filePath = outputFile
     const publicPath = compilation.options.output?.publicPath
     // Use correct publicPath, for now only for paths beginning with /
-    if (publicPath && publicPath !== 'auto' && publicPath.indexOf('/') === 0) {
+    if (publicPath && publicPath.indexOf('/') === 0) {
       filePath = `${publicPath}${outputFile}`
     }
     const scriptUrl = new URL(filePath, baseUrl).href; // Load source of script as string
