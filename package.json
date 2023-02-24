@@ -1,6 +1,6 @@
 {
   "name": "html-webpack-jsdom-prerender-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Webpack plugin to prerender JS apps in a JSDOM context",
   "repository": "https://github.com/associatedpress/html-webpack-jsdom-prerender-plugin",
   "author": "Andrew Milligan",
