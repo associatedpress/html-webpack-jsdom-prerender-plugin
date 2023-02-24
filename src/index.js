@@ -49,7 +49,13 @@ class HtmlWebpackJsdomPrerenderPlugin {
     const source = asset.source()
 
     const baseUrl = 'http://localhost'
-    const scriptUrl = new URL(outputFile, baseUrl).href
+    let filePath = outputFile
+    const publicPath = compilation.options.output?.publicPath
+    // Use correct publicPath, for now only for paths beginning with /
+    if (publicPath && publicPath.indexOf('/') === 0) {
+      filePath = `${publicPath}${outputFile}`
+    }
+    const scriptUrl = new URL(filePath, baseUrl).href; // Load source of script as string
 
     // Load source of script as string
     const resourceLoader = new StringResourceLoader({ [scriptUrl]: source })

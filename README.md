@@ -71,3 +71,5 @@ by Reuters Graphics.
      render(<Component />, node)
    }
    ```
+
+   **Note** The plugin only currently supports two types of `publicPath`: "auto" (the same behavior as  if the publicPath is excluded) and a path relative to the root, for example "/assets".
